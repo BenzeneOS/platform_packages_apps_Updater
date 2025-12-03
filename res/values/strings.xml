@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">System Updater</string>
+    <string name="notification_channel_progress">Update progress</string>
+    <string name="notification_channel_reboot">Reboot prompt</string>
+    <string name="notification_channel_failure">Error reporting</string>
+    <string name="notification_channel_updated">Already up to date</string>
+    <string name="notification_channel_set_security_preview">Security preview release opt-in</string>
+    <string name="notification_check_title">Checking for system update</string>
+    <string name="notification_download_title">Downloading system update</string>
+    <string name="notification_verify_title">Verifying system update</string>
+    <string name="notification_install_title">Installing system update</string>
+    <string name="notification_validate_title">Validating system update</string>
+    <string name="notification_finalize_title">Finalizing system update</string>
+    <string name="notification_reboot_title">Update successfully installed</string>
+    <string name="notification_reboot_text">Please reboot the device to run the latest OS release.</string>
+    <string name="notification_reboot_action">Reboot</string>
+    <string name="notification_updated_title">Device is up-to-date</string>
+    <string name="notification_updated_text">Latest %s channel release is already installed.</string>
+    <string name="notification_failed_check_title">Failed to check for updates</string>
+    <string name="notification_failed_check_text">An error occurred checking for the latest update. The update system will try again soon.</string>
+    <string name="notification_failed_download_title">Failed to download update</string>
+    <string name="notification_failed_download_text">An error occurred downloading the latest update. The update system will try again soon. The download will be resumed if it\'s still the latest version.</string>
+    <string name="notification_failed_verify_title">Failed to verify update</string>
+    <string name="notification_failed_verify_text">The latest update downloaded from the server failed to pass verification. The update system will try again soon. The download will be performed again.</string>
+    <string name="notification_failed_install_title">Failed to install update</string>
+    <string name="notification_failed_install_text">The latest update passed verification but installation failed. The update system will try again soon.</string>
+    <string name="notification_set_security_preview_title">Security preview releases</string>
+    <string name="notification_set_security_preview_text">Tap to choose whether to opt into security preview releases</string>
+    <string name="settings_title">System update</string>
+    <string name="settings_header">Settings</string>
+    <string name="channel_title">Release channel</string>
+    <string name="channel_stable">Stable</string>
+    <string name="channel_beta">Beta</string>
+    <string name="channel_alpha">Alpha</string>
+    <string name="network_type_title">Permitted networks</string>
+    <string name="network_type_any">Any</string>
+    <string name="network_type_not_roaming">Not roaming</string>
+    <string name="network_type_unmetered">Unmetered</string>
+    <string name="battery_not_low_title">Require battery above warning level</string>
+    <string name="battery_not_low_summary_on">Only download / install updates when the battery is above the warning level</string>
+    <string name="battery_not_low_summary_off">Download / install updates even when the battery is below the warning level</string>
+    <string name="requires_charging_title">Require device to be charging</string>
+    <string name="requires_charging_summary_on">Only download / install updates when the device is charging</string>
+    <string name="requires_charging_summary_off">Download / install updates regardless of charging status</string>
+    <string name="idle_reboot_title">Automatic reboot</string>
+    <string name="idle_reboot_summary_on">Automatically reboot once the device is idle after successfully installing an update</string>
+    <string name="idle_reboot_summary_off">Don\'t automatically reboot once the device is idle after successfully installing an update</string>
+    <string name="check_for_updates_title">Check for updates</string>
+    <string name="check_for_updates_summary">Tap to check for updates</string>
+    <string name="notification_settings_title">Notification settings</string>
+    <string name="notification_settings_summary">Modify notification channel settings</string>
+    <string name="use_security_preview_channel_title">Receive security preview releases</string>
+    <string name="use_security_preview_channel_summary_on">Use alternate release channels receiving security patches still under an embargo for source code and details</string>
+    <string name="use_security_preview_channel_summary_off">Don\'t use alternate release channels receiving security patches still under an embargo for source code and details</string>
+    <string name="security_preview_settings_title">Security preview releases</string>
+    <string name="security_preview_settings_description">
+You can opt into security preview releases which provide early access to Android security patches prior to the official disclosure. It\'s recommended to enable this.
+
+The only difference between regular releases and security preview releases are the future Android security patches being applied. The downside of security preview releases is that source code for the patches cannot be provided until the official disclosure date.</string>
+    <string name="security_preview_settings_error_saving">An error occurred trying to save security preview releases setting</string>
+    <string name="next">Next</string>
+    <string name="save">Save</string>
+</resources>

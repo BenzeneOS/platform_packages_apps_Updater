@@ -1,0 +1,8 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <CheckBoxPreference app:key="use_security_preview_channel"
+            app:persistent="false"
+            app:title="@string/use_security_preview_channel_title"
+            app:summaryOn="@string/use_security_preview_channel_summary_on"
+            app:summaryOff="@string/use_security_preview_channel_summary_off"
+            app:iconSpaceReserved="false" />
+</PreferenceScreen>

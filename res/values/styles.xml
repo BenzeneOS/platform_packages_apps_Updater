@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SettingsPreferenceTheme" parent="@style/PreferenceTheme.SettingsLib">
+        <item name="preferenceFragmentCompatStyle">@style/SetupWizardPreferenceFragmentStyle</item>
+    </style>
+
+    <style name="PreferenceTheme.SetupWizard" parent="@style/SettingsPreferenceTheme">
+        <item name="android:clipToPadding">true</item>
+        <item name="android:clipChildren">true</item>
+        <item name="preferenceFragmentCompatStyle">@style/SetupWizardPreferenceFragmentStyle</item>
+    </style>
+
+    <style name="SetupWizardPreferenceFragmentStyle" parent="PreferenceFragment.Material">
+        <item name="android:layout">@layout/setup_preference</item>
+    </style>
+
+    <style name="SetupWizardPartnerResource">
+        <!-- Disable to use partner overlay theme for outside setupwizard flow. -->
+        <item name="sucUsePartnerResource">false</item>
+        <!-- Enable heavy theme style inside setupwizard flow. -->
+        <item name="sudUsePartnerHeavyTheme">true</item>
+    </style>
+</resources>

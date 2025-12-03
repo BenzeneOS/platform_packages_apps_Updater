@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SUW related themes -->
+<resources>
+    <style name="GlifV4Theme" parent="SudThemeGlifV4.DayNight">
+        <item name="android:clipToPadding">true</item>
+        <item name="android:clipChildren">true</item>
+        <item name="android:switchStyle">@style/Switch.SettingsLib</item>
+        <item name="switchStyle">@style/SwitchCompat.SettingsLib</item>
+        <item name="android:windowBackground">?android:attr/colorBackground</item>
+        <item name="*android:preferencePanelStyle">@*android:style/PreferencePanel.Dialog</item>
+        <item name="preferenceTheme">@style/PreferenceTheme.SetupWizard</item>
+        <item name="sudUseBottomProgressBar">true</item>
+    </style>
+
+    <style name="GlifV4Theme.DayNight" parent="GlifV4Theme" />
+</resources>
