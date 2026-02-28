@@ -302,6 +302,7 @@ public class Service extends IntentService {
             final long targetBuildDate = Long.parseLong(metadata[1]);
             final long sourceBuildDate = SystemProperties.getLong("ro.build.date.utc", 0);
             if (targetBuildDate <= sourceBuildDate) {
+                PeriodicJob.resetRetryCount(this);
                 notificationHandler.showUpdatedNotification(channel);
                 Log.d(TAG, "targetBuildDate: " + targetBuildDate + " not higher than sourceBuildDate: " + sourceBuildDate);
                 mUpdating = false;

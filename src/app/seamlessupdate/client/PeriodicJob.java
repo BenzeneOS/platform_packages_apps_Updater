@@ -19,7 +19,9 @@ public class PeriodicJob extends JobService {
     private static final int JOB_ID_PERIODIC = 1;
     private static final int JOB_ID_RETRY = 2;
     private static final long INTERVAL_MILLIS = 6 * 60 * 60 * 1000;
-    private static final long MIN_LATENCY_MILLIS = 4 * 60 * 1000;
+    private static final long INITIAL_RETRY_MILLIS = 30 * 60 * 1000;
+    private static final long MAX_RETRY_MILLIS = 6 * 60 * 60 * 1000;
+    private static final String PREF_RETRY_COUNT = "retry_count";
     private static final String EXTRA_JOB_CHANNEL = "extra_job_channel";
 
     static void schedule(final Context context) {
@@ -56,17 +58,27 @@ public class PeriodicJob extends JobService {
     }
 
     static void scheduleRetry(final Context context) {
+        final var preferences = Settings.getPreferences(context);
+        final int retryCount = preferences.getInt(PREF_RETRY_COUNT, 0);
+        final long delay = Math.min(INITIAL_RETRY_MILLIS * (1L << Math.min(retryCount, 4)), MAX_RETRY_MILLIS);
+        preferences.edit().putInt(PREF_RETRY_COUNT, retryCount + 1).apply();
+        Log.d(TAG, "scheduling retry #" + (retryCount + 1) + " with " + (delay / 60000) + "min delay");
+
         final JobScheduler scheduler = context.getSystemService(JobScheduler.class);
         final ComponentName serviceName = new ComponentName(context, PeriodicJob.class);
         final int result = scheduler.schedule(new JobInfo.Builder(JOB_ID_RETRY, serviceName)
             .setRequiredNetworkType(Settings.getNetworkType(context))
             .setRequiresBatteryNotLow(Settings.getBatteryNotLow(context))
             .setRequiresCharging(Settings.getRequiresCharging(context))
-            .setMinimumLatency(MIN_LATENCY_MILLIS)
+            .setMinimumLatency(delay)
             .build());
         if (result == JobScheduler.RESULT_FAILURE) {
             Log.d(TAG, "Retry job schedule failed");
         }
+    }
+
+    static void resetRetryCount(final Context context) {
+        Settings.getPreferences(context).edit().remove(PREF_RETRY_COUNT).apply();
     }
 
     static void cancel(final Context context) {
